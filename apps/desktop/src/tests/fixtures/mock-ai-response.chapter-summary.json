@@ -1,0 +1,25 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_chapter_summary",
+  "mode": "mock",
+  "title": "本章总结",
+  "summary": "主角进入新场景并发现异常。",
+  "blocks": [
+    {
+      "id": "blk_chapter_summary_1",
+      "type": "chapter_summary",
+      "chapterRef": { "bookId": "book-1", "chapterId": "ch-1", "chapterTitle": "第一章", "sourceChapterIndex": 0 },
+      "bullets": [
+        { "text": "主角进入病院。", "importance": "high", "citationIds": ["c1"] }
+      ],
+      "openQuestions": ["钟声停止的原因尚未解释。"]
+    }
+  ],
+  "citations": [
+    { "id": "c1", "type": "paragraph", "label": "第一章 · 第 1 段", "bookId": "book-1", "chapterId": "ch-1", "paragraphIndex": 0, "quote": "主角进入病院。" }
+  ],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": { "queryUsed": "主角 病院" }
+}

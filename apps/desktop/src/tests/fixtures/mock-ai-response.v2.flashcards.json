@@ -1,0 +1,24 @@
+{
+  "schema": "bookmind.ai.response.v2",
+  "responseId": "fixture-v2-flashcards",
+  "mode": "mock",
+  "title": "本章闪卡",
+  "blocks": [
+    {
+      "id": "blk_cards_1",
+      "type": "flashcards",
+      "title": "复习卡片",
+      "cards": [
+        { "id": "card-1", "front": "李医生为什么怀疑林七夜？", "back": "因为林七夜描述了常人难以相信的月球炽天使经历。", "tags": ["李医生", "炽天使"], "citationIds": ["c1"] }
+      ],
+      "citationIds": ["c1"]
+    }
+  ],
+  "citations": [
+    { "id": "c1", "type": "range", "bookId": "book-1", "chapterId": "chapter-2", "chapterIndex": 1, "paragraphIndex": 3, "startOffset": 0, "endOffset": 8, "snippet": "月球上的炽天使", "sourceText": "月球上的炽天使", "label": "第2章 · 第4段" }
+  ],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

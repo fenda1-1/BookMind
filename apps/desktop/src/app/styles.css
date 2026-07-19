@@ -1,0 +1,9 @@
+@import './readerStyles.css';
+@import './styles/base.css';
+@import './styles/layout.css';
+@import './styles/settings.css';
+@import './styles/characters.css';
+
+[hidden] {
+  display: none !important;
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "bookmind.ai.response.v2",
+  "responseId": "fixture-v2-summary",
+  "mode": "mock",
+  "title": "章节总结",
+  "summary": "第2章围绕林七夜对炽天使的描述展开。",
+  "blocks": [
+    {
+      "id": "blk_summary_1",
+      "type": "summary",
+      "title": "第2章总结",
+      "bullets": [
+        { "text": "林七夜讲述自己看见月球上的炽天使。", "importance": "high", "citationIds": ["c1"] },
+        { "text": "李医生从怀疑转为继续追问。", "importance": "medium", "citationIds": ["c2"] }
+      ],
+      "citationIds": ["c1", "c2"]
+    }
+  ],
+  "citations": [
+    { "id": "c1", "type": "range", "bookId": "book-1", "chapterId": "chapter-2", "chapterIndex": 1, "paragraphIndex": 3, "startOffset": 0, "endOffset": 8, "snippet": "月球上的炽天使", "sourceText": "月球上的炽天使", "label": "第2章 · 第4段" },
+    { "id": "c2", "type": "range", "bookId": "book-1", "chapterId": "chapter-2", "chapterIndex": 1, "paragraphIndex": 4, "startOffset": 2, "endOffset": 10, "snippet": "李医生继续追问", "sourceText": "李医生继续追问", "label": "第2章 · 第5段" }
+  ],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

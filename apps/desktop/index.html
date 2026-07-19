@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMind Desktop</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --boot-bg: #f4eee3;
+        --boot-surface: #fbf7ef;
+        --boot-text: #251f19;
+        --boot-muted: #756b60;
+        --boot-accent: #4d5d86;
+        --boot-border: rgba(37, 31, 25, 0.16);
+      }
+      :root[data-boot-theme='dark'] {
+        color-scheme: dark;
+        --boot-bg: #17130f;
+        --boot-surface: #211c17;
+        --boot-text: #f2e9db;
+        --boot-muted: #b8ab9c;
+        --boot-accent: #91a5db;
+        --boot-border: rgba(242, 233, 219, 0.15);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-boot-theme='light']) {
+          color-scheme: dark;
+          --boot-bg: #17130f;
+          --boot-surface: #211c17;
+          --boot-text: #f2e9db;
+          --boot-muted: #b8ab9c;
+          --boot-accent: #91a5db;
+          --boot-border: rgba(242, 233, 219, 0.15);
+        }
+      }
+      html, body, #root { width: 100%; height: 100%; margin: 0; }
+      body { overflow: hidden; background: var(--boot-bg); }
+      .bookmind-boot-shell {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: grid;
+        place-items: center;
+        background: var(--boot-bg);
+        color: var(--boot-text);
+        font-family: Inter, "Segoe UI", "Microsoft YaHei", sans-serif;
+        transition: opacity 140ms ease;
+      }
+      .bookmind-boot-shell[data-leaving='true'] { opacity: 0; pointer-events: none; }
+      .bookmind-boot-card {
+        display: grid;
+        grid-template-columns: 52px minmax(0, auto);
+        align-items: center;
+        gap: 16px;
+        min-width: min(320px, calc(100vw - 48px));
+      }
+      .bookmind-boot-mark {
+        display: grid;
+        width: 52px;
+        height: 52px;
+        place-items: center;
+        border: 1px solid var(--boot-border);
+        border-radius: 8px;
+        background: var(--boot-surface);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+        color: var(--boot-accent);
+        font: 800 27px/1 Georgia, serif;
+      }
+      .bookmind-boot-copy { min-width: 0; }
+      .bookmind-boot-title { margin: 0 0 5px; font-size: 19px; font-weight: 750; }
+      .bookmind-boot-status { margin: 0; color: var(--boot-muted); font-size: 13px; }
+      .bookmind-boot-progress {
+        grid-column: 1 / -1;
+        height: 3px;
+        overflow: hidden;
+        border-radius: 2px;
+        background: var(--boot-border);
+      }
+      .bookmind-boot-progress::after {
+        content: '';
+        display: block;
+        width: 38%;
+        height: 100%;
+        background: var(--boot-accent);
+        animation: bookmind-boot-progress 1.15s ease-in-out infinite;
+      }
+      @keyframes bookmind-boot-progress {
+        from { transform: translateX(-110%); }
+        to { transform: translateX(370%); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .bookmind-boot-shell { transition: none; }
+        .bookmind-boot-progress::after { animation: none; width: 58%; }
+      }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317130f'/%3E%3Cpath d='M18 13h22a9 9 0 0 1 9 9v29H25a10 10 0 0 1-10-10V16a3 3 0 0 1 3-3Z' fill='%23fbf7ef'/%3E%3Cpath d='M24 22h17M24 31h15M24 40h11' stroke='%234d5d86' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="bookmind-boot-shell" class="bookmind-boot-shell" role="status" aria-live="polite" aria-label="BookMind 正在启动">
+      <div class="bookmind-boot-card">
+        <div class="bookmind-boot-mark" aria-hidden="true">B</div>
+        <div class="bookmind-boot-copy">
+          <p class="bookmind-boot-title">BookMind</p>
+          <p class="bookmind-boot-status">正在准备阅读空间...</p>
+        </div>
+        <div class="bookmind-boot-progress" aria-hidden="true"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+</html>

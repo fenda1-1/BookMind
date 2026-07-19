@@ -1,0 +1,18 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_flashcards",
+  "mode": "mock",
+  "title": "闪卡",
+  "blocks": [
+    {
+      "id": "blk_cards_1",
+      "type": "flashcards",
+      "cards": [{ "front": "本章核心冲突是什么？", "back": "主角进入病院后发现异常。", "tags": ["章节总结"], "difficulty": "medium", "citationIds": ["c1"] }]
+    }
+  ],
+  "citations": [{ "id": "c1", "type": "paragraph", "label": "第一章 · 第 1 段", "quote": "病院异常" }],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

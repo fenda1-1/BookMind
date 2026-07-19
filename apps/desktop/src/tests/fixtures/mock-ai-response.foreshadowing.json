@@ -1,0 +1,18 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_foreshadowing",
+  "mode": "mock",
+  "title": "伏笔追踪",
+  "blocks": [
+    {
+      "id": "blk_foreshadow_1",
+      "type": "foreshadowing",
+      "items": [{ "clue": "反复出现的钟声", "status": "new", "hypothesis": "可能指向时间循环", "confidence": 0.62, "citationIds": ["c1"] }]
+    }
+  ],
+  "citations": [{ "id": "c1", "type": "paragraph", "label": "第一章 · 第 3 段", "quote": "钟声" }],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

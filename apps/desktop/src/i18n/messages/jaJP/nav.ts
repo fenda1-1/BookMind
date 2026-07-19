@@ -1,0 +1,18 @@
+export const jaJPNav = {
+  'nav.overview.label': 'プロフィール',
+  'nav.overview.description': '読書と知識ダッシュボード',
+  'nav.reader.label': 'リーダー',
+  'nav.reader.description': 'TXTリーダーとAIリサーチデスク',
+  'nav.library.label': 'ライブラリー',
+  'nav.library.description': 'ローカルブックとインポートキュー',
+  'nav.knowledge.label': '知識',
+  'nav.knowledge.description': 'ハイライト、ノート、フラッシュカード',
+  'nav.characters.label': 'キャラクター',
+  'nav.characters.description': 'フィクション文字と関係グラフ',
+  'nav.search.label': 'インフォメーション',
+  'nav.search.description': 'ローカル全文、メモ、引用検索',
+  'nav.tasks.label': 'タスク',
+  'nav.tasks.description': '背景タスクとログ',
+  'nav.settings.label': 'コンテンツ',
+  'nav.settings.description': 'モデル、プライバシー、読書テーマ',
+} as const;

@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+const source = readFileSync(new URL('./AiReaderPanel.tsx', import.meta.url), 'utf8');
+const styles = readFileSync(new URL('../../app/styles/settings.css', import.meta.url), 'utf8');
+
+assert.match(source, /type AiAttachmentOptionId = 'chapter' \| 'page' \| 'book' \| 'summary' \| 'highlight' \| 'bookmark' \| 'library';/u);
+assert.doesNotMatch(source, /createOption\('dock'/u);
+assert.doesNotMatch(source, /id === 'dock'/u);
+assert.match(source, /tokenLabel: formatAttachmentTokenLabel\(resolveAttachmentTokenEstimate\(id,/u);
+assert.match(source, /createOption\('chapter'/u);
+assert.match(source, /createOption\('page'/u);
+assert.match(source, /createOption\('book'/u);
+assert.match(source, /createOption\('summary'/u);
+assert.match(source, /createOption\('highlight'/u);
+assert.match(source, /createOption\('bookmark'/u);
+assert.match(source, /createOption\('library'/u);
+assert.match(source, /className="ai-attachment-option-label"/u);
+assert.match(source, /className="ai-attachment-token-tag"/u);
+assert.match(source, /function resolveAttachmentTokenEstimate\(id: AiAttachmentOptionId/u);
+assert.match(source, /readerChapters\?: ReaderChapter\[\]/u);
+assert.match(source, /if \(id === 'book'\) return estimateBookTextTokens\(context\.book, context\.readerChapters\)/u);
+assert.match(source, /function getReaderChaptersAttachmentText\(chapters: ReaderChapter\[\]\)/u);
+assert.match(source, /function formatAttachmentTokenLabel\(tokens: number \| null\)/u);
+assert.match(source, /attachmentPreviewId/u);
+assert.match(source, /onContextMenu=\{\(event\) => openAttachmentPreview\(event, option\.id\)\}/u);
+assert.match(source, /function buildAttachmentPreviewMaterial/u);
+assert.match(source, /className="ai-attachment-preview-back"/u);
+assert.match(source, /className="ai-attachment-context-hint"/u);
+assert.match(source, /title=\{t\('ai\.attachment\.itemHint'\)\}/u);
+assert.doesNotMatch(source, /return '-- token'/u);
+assert.match(source, /if \(id === 'summary'\)/u);
+assert.match(source, /if \(id === 'bookmark'\)/u);
+assert.match(source, /if \(id === 'library'\)/u);
+assert.match(styles, /\.ai-attachment-option-grid button \{[^}]*display:\s*grid/u);
+assert.match(styles, /\.ai-attachment-token-tag \{[^}]*justify-self:\s*end/u);
+assert.match(styles, /\.ai-attachment-popover\.previewing/u);
+assert.match(styles, /\.ai-attachment-preview-body/u);
+assert.match(styles, /\.ai-attachment-context-hint/u);
+
+console.log('Verified AI attachment options render token labels.');

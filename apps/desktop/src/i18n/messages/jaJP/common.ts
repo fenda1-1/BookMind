@@ -1,0 +1,18 @@
+export const jaJPCommon = {
+  'common.configure': '設定',
+  'common.search': 'インフォメーション',
+  'common.open': 'オープン',
+  'common.back': 'バックナンバー',
+  'common.cancel': 'キャンセル',
+  'common.save': '保存する',
+  'common.confirm': 'お問い合わせ',
+  'common.done': 'ログイン',
+  'common.loading': 'ログイン',
+  'common.loadFailed': 'このビューを読み込む失敗',
+  'common.reload': 'リロード',
+  'common.none': 'なし',
+  'common.no': 'なし',
+  'common.localBookshelf': 'ローカルブックシェルフ',
+  'common.new': 'ニュース',
+  'common.score': 'スコア',
+} as const;

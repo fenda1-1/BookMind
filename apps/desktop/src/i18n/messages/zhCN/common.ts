@@ -1,0 +1,18 @@
+export const zhCNCommon = {
+  'common.configure': '配置',
+  'common.search': '搜索',
+  'common.open': '打开',
+  'common.back': '返回',
+  'common.cancel': '取消',
+  'common.save': '保存',
+  'common.confirm': '确认',
+  'common.done': '完成',
+  'common.loading': '加载中',
+  'common.loadFailed': '界面加载失败',
+  'common.reload': '重新加载',
+  'common.none': '暂无',
+  'common.no': '无',
+  'common.localBookshelf': '本地书架',
+  'common.new': '新',
+  'common.score': '评分',
+} as const;

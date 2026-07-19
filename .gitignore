@@ -1,0 +1,97 @@
+# Dependencies and package-manager caches
+node_modules/
+.pnpm-store/
+.yarn/
+.pnp.*
+
+# Node, TypeScript, and Vite output
+dist/
+build/
+out/
+.vite/
+.cache/
+*.tsbuildinfo
+*.tgz
+
+# Rust and Tauri build output
+target/
+**/src-tauri/target/
+*.profraw
+*.profdata
+*.pdb
+*.dSYM/
+
+# Test, coverage, benchmark, and acceptance output
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+blob-report/
+**/acceptance-artifacts/
+**/benchmark-artifacts/
+**/parity-artifacts/
+apps/desktop/.tmp/
+
+# Logs, traces, and crash dumps
+*.log
+*.log.*
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.trace
+*.dmp
+
+# Environment files and machine-local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Local BookMind data and browser profiles
+data-dev/
+.bookmind-data/
+chrome-profile/
+browser-profile/
+
+# Temporary files and directories
+.tmp/
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.eslintcache
+.stylelintcache
+
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Local AI and automation tooling
+.claude/
+.codex/
+.learnings/
+.opencode/
+.playwright-mcp/
+.superpowers/
+
+# Retired project-specific generators kept as defensive exclusions
+/tmp-book-sources-repair/
+/apps/designer/character-graph-parity-artifacts/
+/designer/character-graph-parity-artifacts/
+/designer/character-graph-parity-preview.png

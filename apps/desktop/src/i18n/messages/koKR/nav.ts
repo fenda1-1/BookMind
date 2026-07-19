@@ -1,0 +1,18 @@
+export const koKRNav = {
+  'nav.overview.label': '제품정보',
+  'nav.overview.description': '독서 및 지식 대시보드',
+  'nav.reader.label': '관련 기사',
+  'nav.reader.description': 'TXT 리더 및 AI 연구 데스크',
+  'nav.library.label': '관련 기사',
+  'nav.library.description': '지역 책 및 수입 큐',
+  'nav.knowledge.label': '제품정보',
+  'nav.knowledge.description': '하이라이트, 노트, flashcards',
+  'nav.characters.label': '이름 *',
+  'nav.characters.description': 'Fiction 특성 및 관계 도표',
+  'nav.search.label': '제품정보',
+  'nav.search.description': '로컬 풀 텍스트, 메모 및 인용 검색',
+  'nav.tasks.label': '기타',
+  'nav.tasks.description': '배경 작업 및 로그',
+  'nav.settings.label': '지원하다',
+  'nav.settings.description': '모델, 개인 정보 보호, 독서 테마',
+} as const;

@@ -1,0 +1,18 @@
+export const enUSNav = {
+  'nav.overview.label': 'Overview',
+  'nav.overview.description': 'Reading and knowledge dashboard',
+  'nav.reader.label': 'Reader',
+  'nav.reader.description': 'TXT reader and AI research desk',
+  'nav.library.label': 'Library',
+  'nav.library.description': 'Local books and import queue',
+  'nav.knowledge.label': 'Knowledge',
+  'nav.knowledge.description': 'Highlights, notes, flashcards',
+  'nav.characters.label': 'Characters',
+  'nav.characters.description': 'Fiction characters and relationship graph',
+  'nav.search.label': 'Search',
+  'nav.search.description': 'Local full-text, note, and citation search',
+  'nav.tasks.label': 'Tasks',
+  'nav.tasks.description': 'Background tasks and logs',
+  'nav.settings.label': 'Settings',
+  'nav.settings.description': 'Models, privacy, reading themes',
+} as const;

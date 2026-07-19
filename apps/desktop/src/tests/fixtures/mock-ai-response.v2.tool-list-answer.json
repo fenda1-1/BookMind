@@ -1,0 +1,27 @@
+{
+  "schema": "bookmind.ai.response.v2",
+  "responseId": "fixture-v2-tools",
+  "mode": "local",
+  "title": "BookMind 阅读工具清单",
+  "summary": "只展示 BookMind 阅读能力。",
+  "blocks": [
+    { "id": "blk_tools", "type": "summary", "title": "可用工具", "bullets": [
+      { "text": "get_current_context：获取当前阅读上下文" },
+      { "text": "search_local_index：本地索引搜索（全书/当前章）" },
+      { "text": "get_paragraph_window：展开引用段落上下文" },
+      { "text": "jump_to_source：跳转到引用来源" },
+      { "text": "save_ai_note：保存 AI 回答为笔记" },
+      { "text": "save_citation_highlight：保存引用为高亮" },
+      { "text": "generate_flashcards：生成闪卡" },
+      { "text": "build_timeline：构建时间线" },
+      { "text": "extract_characters：抽取人物关系" },
+      { "text": "extract_foreshadowing：抽取伏笔" },
+      { "text": "request_cloud_ai：经确认后调用云端模型" }
+    ], "citationIds": [] }
+  ],
+  "citations": [],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": { "forbiddenDeveloperToolsHidden": true }
+}
