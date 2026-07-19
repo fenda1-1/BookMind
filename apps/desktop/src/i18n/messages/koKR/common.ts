@@ -1,0 +1,18 @@
+export const koKRCommon = {
+  'common.configure': '제품 설명',
+  'common.search': '제품정보',
+  'common.open': '기타',
+  'common.back': '이름 *',
+  'common.cancel': '이름 *',
+  'common.save': '제품 정보',
+  'common.confirm': '이름 *',
+  'common.done': '이름 *',
+  'common.loading': '제품정보',
+  'common.loadFailed': '이 보기를로드 실패',
+  'common.reload': '관련 상품',
+  'common.none': '이름 *',
+  'common.no': '이름 *',
+  'common.localBookshelf': '지역 책shelf',
+  'common.new': '(주)',
+  'common.score': '이름 *',
+} as const;

@@ -1,0 +1,24 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_citations",
+  "mode": "mock",
+  "title": "引用测试",
+  "blocks": [
+    { "id": "blk_answer_1", "type": "answer", "title": "回答", "content": "结论需要引用支撑。", "citationIds": ["c1", "c6"] },
+    { "id": "blk_para_ref_1", "type": "paragraph_reference", "target": { "bookId": "book-1", "chapterId": "ch-1", "paragraphIndex": 4, "startOffset": 0, "endOffset": 8, "quote": "引用原文" }, "why": "支撑第 1 条结论", "citationIds": ["c1"] }
+  ],
+  "citations": [
+    { "id": "c1", "type": "paragraph", "label": "第一章 · 第 5 段", "bookId": "book-1", "chapterId": "ch-1", "paragraphIndex": 4, "quote": "引用原文", "before": "前文", "after": "后文" },
+    { "id": "c2", "type": "chapter", "label": "第二章", "bookId": "book-1", "chapterId": "ch-2", "sourceChapterIndex": 1, "quote": "章节开头" },
+    { "id": "c3", "type": "range", "label": "第一章 · 范围", "bookId": "book-1", "chapterId": "ch-1", "paragraphIndex": 6, "startOffset": 2, "endOffset": 18, "quote": "范围引用" },
+    { "id": "c4", "type": "note", "label": "边注", "noteId": "note-1", "quote": "边注内容" },
+    { "id": "c5", "type": "highlight", "label": "高亮", "highlightId": "hl-1", "quote": "高亮内容" },
+    { "id": "c6", "type": "search_result", "label": "检索命中", "chunkId": "chunk-1", "score": 0.91, "quote": "检索片段" },
+    { "id": "c7", "type": "external", "label": "外部网页", "url": "https://example.com", "quote": "外部内容" },
+    { "id": "c8", "type": "paragraph", "label": "缺字段引用" }
+  ],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

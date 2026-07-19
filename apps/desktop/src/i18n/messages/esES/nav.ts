@@ -1,0 +1,18 @@
+export const esESNav = {
+  'nav.overview.label': 'Sinopsis',
+  'nav.overview.description': 'Lectura y conocimiento',
+  'nav.reader.label': 'Reader',
+  'nav.reader.description': 'Lector de TXT y escritorio de investigación AI',
+  'nav.library.label': 'Biblioteca',
+  'nav.library.description': 'Libros locales y cola de importación',
+  'nav.knowledge.label': 'Conocimiento',
+  'nav.knowledge.description': 'Aspectos destacados, notas, tarjetas flash',
+  'nav.characters.label': 'Personajes',
+  'nav.characters.description': 'Personajes de ficción y gráfico de relación',
+  'nav.search.label': 'Búsqueda',
+  'nav.search.description': 'Búsqueda local de texto completo, nota y citación',
+  'nav.tasks.label': 'Tareas',
+  'nav.tasks.description': 'Tareas y registros de antecedentes',
+  'nav.settings.label': 'Ajustes',
+  'nav.settings.description': 'Modelos, privacidad, temas de lectura',
+} as const;

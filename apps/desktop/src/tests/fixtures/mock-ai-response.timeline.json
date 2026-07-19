@@ -1,0 +1,18 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_timeline",
+  "mode": "mock",
+  "title": "时间线",
+  "blocks": [
+    {
+      "id": "blk_timeline_1",
+      "type": "timeline",
+      "events": [{ "id": "evt_1", "order": 1, "timeLabel": "夜晚", "event": "主角抵达医院", "kind": "happened", "chapterRef": { "chapterId": "ch-1", "chapterTitle": "第一章" }, "citationIds": ["c1"] }]
+    }
+  ],
+  "citations": [{ "id": "c1", "type": "paragraph", "label": "第一章 · 第 1 段", "quote": "夜晚抵达医院" }],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

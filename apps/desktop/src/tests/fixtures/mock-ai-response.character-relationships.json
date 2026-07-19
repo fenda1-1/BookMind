@@ -1,0 +1,19 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_characters",
+  "mode": "mock",
+  "title": "人物关系",
+  "blocks": [
+    {
+      "id": "blk_char_rel_1",
+      "type": "character_relationships",
+      "characters": [{ "id": "char_a", "name": "林七夜", "aliases": ["七夜"], "role": "主角", "citationIds": ["c1"] }],
+      "relationships": [{ "from": "char_a", "to": "char_b", "label": "观察对象", "status": "inferred", "evidence": "对话显示双方尚不信任。", "citationIds": ["c1"] }]
+    }
+  ],
+  "citations": [{ "id": "c1", "type": "paragraph", "label": "第一章 · 第 8 段", "quote": "双方对话" }],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

@@ -1,0 +1,145 @@
+name: Publish Desktop Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  verify-release:
+    name: Verify release version and test suite
+    runs-on: ubuntu-22.04
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/desktop/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: apps/desktop
+        run: npm ci
+
+      - name: Verify the tag, application version, and release notes
+        id: version
+        working-directory: apps/desktop
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          node scripts/verify-release-version.mjs
+          echo "version=${RELEASE_TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Run frontend verification suite
+        working-directory: apps/desktop
+        run: npm test
+
+      - name: Audit production JavaScript dependencies
+        working-directory: apps/desktop
+        run: npm audit --omit=dev --audit-level=high
+
+  build:
+    name: Build ${{ matrix.name }} package
+    needs: verify-release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows
+            os: windows-latest
+            artifact: bookmind-release-windows
+            extensions: '.msi,.exe'
+          - name: macOS
+            os: macos-latest
+            artifact: bookmind-release-macos
+            extensions: '.dmg'
+          - name: Linux
+            os: ubuntu-22.04
+            artifact: bookmind-release-linux
+            extensions: '.AppImage,.deb,.rpm'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux desktop dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            curl \
+            file \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libssl-dev \
+            libwebkit2gtk-4.1-dev \
+            patchelf
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/desktop/package-lock.json
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Install frontend dependencies
+        working-directory: apps/desktop
+        run: npm ci
+
+      - name: Build native package
+        working-directory: apps/desktop
+        run: npm run tauri:build
+
+      - name: Collect release assets and checksums
+        shell: pwsh
+        env:
+          PACKAGE_EXTENSIONS: ${{ matrix.extensions }}
+          PLATFORM: ${{ matrix.name }}
+        run: |
+          $bundleDir = 'apps/desktop/src-tauri/target/release/bundle'
+          $releaseDir = 'release-assets'
+          $extensions = $env:PACKAGE_EXTENSIONS -split ','
+          New-Item -ItemType Directory -Force -Path $releaseDir | Out-Null
+          $files = Get-ChildItem $bundleDir -File -Recurse | Where-Object { $extensions -contains $_.Extension }
+          if ($files.Count -eq 0) { throw "No release package found for $env:PLATFORM" }
+          $files | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination $releaseDir }
+          Get-ChildItem $releaseDir -File |
+            Get-FileHash -Algorithm SHA256 |
+            ForEach-Object { "{0}  {1}" -f $_.Hash.ToLower(), $_.Path.Substring((Resolve-Path $releaseDir).Path.Length + 1) } |
+            Set-Content -Encoding ascii "$releaseDir/SHA256SUMS-$env:PLATFORM.txt"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: release-assets/
+          if-no-files-found: error
+
+  publish:
+    name: Publish GitHub release
+    needs: [verify-release, build]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bookmind-release-*
+          path: release-assets
+          merge-multiple: true
+
+      - name: Publish release and verified platform packages
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: BookMind ${{ needs.verify-release.outputs.version }}
+          body_path: docs/releases/v${{ needs.verify-release.outputs.version }}.md
+          files: release-assets/*
+          fail_on_unmatched_files: true

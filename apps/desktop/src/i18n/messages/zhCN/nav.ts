@@ -1,0 +1,18 @@
+export const zhCNNav = {
+  'nav.overview.label': '数据总览',
+  'nav.overview.description': '阅读与知识仪表盘',
+  'nav.reader.label': '阅读现场',
+  'nav.reader.description': 'TXT 阅读器与 AI 研究台',
+  'nav.library.label': '书架总览',
+  'nav.library.description': '本地书籍和导入队列',
+  'nav.knowledge.label': '知识沉淀',
+  'nav.knowledge.description': '高亮、笔记、闪卡',
+  'nav.characters.label': '人物中心',
+  'nav.characters.description': '小说人物和关系图谱',
+  'nav.search.label': '全文搜索',
+  'nav.search.description': '本地全文、笔记和引用检索',
+  'nav.tasks.label': '任务中心',
+  'nav.tasks.description': '后台任务与日志',
+  'nav.settings.label': '设置中心',
+  'nav.settings.description': '模型、隐私、阅读主题',
+} as const;

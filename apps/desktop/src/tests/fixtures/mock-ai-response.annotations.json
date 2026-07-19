@@ -1,0 +1,23 @@
+{
+  "schema": "bookmind.ai.response.v1",
+  "responseId": "airesp_mock_annotations",
+  "mode": "mock",
+  "title": "批注预览",
+  "blocks": [
+    {
+      "id": "blk_annotation_1",
+      "type": "annotation",
+      "annotationType": "foreshadow",
+      "target": { "bookId": "book-1", "chapterId": "ch-1", "paragraphIndex": 2, "startOffset": 0, "endOffset": 4, "quote": "钟声停止" },
+      "note": "这里可能暗示时间异常。",
+      "tags": ["伏笔"],
+      "color": "yellow",
+      "citationIds": ["c1"]
+    }
+  ],
+  "citations": [{ "id": "c1", "type": "range", "label": "第一章 · 第 3 段", "quote": "钟声停止" }],
+  "toolCalls": [],
+  "toolResults": [],
+  "actions": [],
+  "diagnostics": {}
+}

@@ -1,0 +1,18 @@
+export const esESCommon = {
+  'common.configure': 'Configuración',
+  'common.search': 'Búsqueda',
+  'common.open': 'Abierto',
+  'common.back': 'Atrás',
+  'common.cancel': 'Cancelar',
+  'common.save': 'Guardar',
+  'common.confirm': 'Confirmación',
+  'common.done': 'Hecho',
+  'common.loading': 'Cargando',
+  'common.loadFailed': 'Failed to load this view',
+  'common.reload': 'Recarga',
+  'common.none': 'Ninguno',
+  'common.no': 'No',
+  'common.localBookshelf': 'Estante local',
+  'common.new': 'Nuevo',
+  'common.score': 'Puntuación',
+} as const;

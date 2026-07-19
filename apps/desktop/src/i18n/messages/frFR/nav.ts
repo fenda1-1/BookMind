@@ -1,0 +1,18 @@
+export const frFRNav = {
+  'nav.overview.label': 'Aperçu général',
+  'nav.overview.description': 'Tableau de bord de la lecture et des connaissances',
+  'nav.reader.label': 'Lecteur',
+  'nav.reader.description': 'Lecteur TXT et bureau de recherche sur l\'IA',
+  'nav.library.label': 'Bibliothèque',
+  'nav.library.description': 'Livres locaux et file d\'attente d\'importation',
+  'nav.knowledge.label': 'Connaissance',
+  'nav.knowledge.description': 'Faits saillants, notes, cartes-éclair',
+  'nav.characters.label': 'Caractères',
+  'nav.characters.description': 'Caractères de fiction et graphique de relation',
+  'nav.search.label': 'Recherche',
+  'nav.search.description': 'Recherche locale en texte intégral, note et citation',
+  'nav.tasks.label': 'Tâches',
+  'nav.tasks.description': 'Tâches et journaux de référence',
+  'nav.settings.label': 'Paramètres',
+  'nav.settings.description': 'Modèles, confidentialité, thèmes de lecture',
+} as const;
