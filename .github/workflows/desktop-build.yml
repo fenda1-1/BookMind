@@ -11,7 +11,7 @@ jobs:
     name: Test and dependency audit
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
@@ -49,7 +49,7 @@ jobs:
             artifact: bookmind-linux
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install Linux desktop dependencies
         if: runner.os == 'Linux'
