@@ -27,7 +27,7 @@ reqwest = { version = "0.13.4", features = ["blocking", "form", "json"] }
 url = "2"
 aes-gcm = "0.10"
 aes = "0.8"
-cbc = { version = "0.1", features = ["alloc"] }
+cbc = { version = "0.2", features = ["alloc"] }
 cipher = "0.4"
 base64 = "0.22"
 md5 = "0.8"
